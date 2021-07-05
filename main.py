@@ -40,6 +40,10 @@ if __name__ == "__main__":
     for file_name in file_list:
         sentences = generate_sentences("input/" + file_name + ".json")
         positive_percent = sentiment_analysis(sentences)
-        result.write(file_name + ": %f\n" % positive_percent)
+
+        ## add result
+        result_text = file_name + ": %f\n" % positive_percent
+        result.write(result_text)
+        print(result_text)
 
     result.close()
